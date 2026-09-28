@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+import 'package:flutter_application_1/kalkulator_page.dart';
+import 'package:flutter_application_1/login_page.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return GetMaterialApp(
       home: LoginPage(),
     );
   }
