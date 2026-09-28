@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/custume_button.dart';
-import 'package:flutter_application_1/component/custume_textfield.dart';
 import 'package:flutter_application_1/component/custume_textview.dart';
 import 'package:flutter_application_1/controllers/kalkulator_controller.dart';
+import 'package:flutter_application_1/component/custume_numberfield.dart';
 import 'package:get/get.dart';
 
 class KalkulatorPage extends StatelessWidget {
@@ -12,21 +12,20 @@ class KalkulatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(title: const Text("Kalkulator")),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            CustomTextField(
+            CustumeNumberField(
               myHint: "Masukkan Angka 1",
               txtcontroller: controller.txtangka1,
             ),
 
             const SizedBox(height: 20),
 
-            CustomTextField(
+            CustumeNumberField(
               myHint: "Masukkan Angka 2",
               txtcontroller: controller.txtangka2,
             ),

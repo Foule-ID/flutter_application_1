@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/kalkulator_page.dart';
 import 'package:flutter_application_1/login_page.dart';
 import 'package:get/get.dart';
 
