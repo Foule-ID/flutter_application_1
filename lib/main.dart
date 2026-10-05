@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/login_page.dart';
+import 'package:flutter_application_1/routes.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: LoginPage(),
+     title: "Belajar Flutter",
+     initialRoute: Routes.registration,
+     getPages: Routes.myPages,
     );
   }
 }
