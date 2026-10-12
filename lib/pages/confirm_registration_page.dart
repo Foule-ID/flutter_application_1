@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/confirm_registeration_controller.dart';
+import 'package:flutter_application_1/controllers/confirm_registeration_controller.dart';
 import 'package:flutter_application_1/component/custume_button.dart';
+import 'package:flutter_application_1/component/custume_textview.dart';
 
 class ConfirmRegistrationPage extends StatelessWidget {
   const ConfirmRegistrationPage({super.key});
@@ -12,41 +13,36 @@ class ConfirmRegistrationPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color(0xFFF5F7FB),
-
       appBar: AppBar(
-        title: const Text(
-          "Confirm Registration",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+        title: const CustomText(
+          text: "Confirm Registration",
+          fontSize: 20,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
       ),
-
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Konfirmasi Data",
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
+            const CustomText(
+              text: "Konfirmasi Data",
+              fontSize: 28,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
             ),
 
             const SizedBox(height: 5),
 
-            const Text(
-              "Periksa kembali data yang kamu masukkan.",
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey,
-              ),
+            const CustomText(
+              text: "Periksa kembali data yang kamu masukkan.",
+              fontSize: 14,
+              color: Colors.grey,
             ),
 
             const SizedBox(height: 25),
@@ -68,41 +64,43 @@ class ConfirmRegistrationPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Data Pengguna",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
-                    ),
+                  const CustomText(
+                    text: "Data Pengguna",
+                    fontSize: 20,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
                   ),
 
                   const SizedBox(height: 20),
 
-                  Text(
-                    "Username: ${controller.username}",
-                    style: const TextStyle(fontSize: 16),
+                  CustomText(
+                    text: "Username: ${controller.username}",
+                    fontSize: 16,
+                    color: Colors.black,
                   ),
 
                   const SizedBox(height: 14),
 
-                  Text(
-                    "Nama Lengkap: ${controller.nama_lengkap}",
-                    style: const TextStyle(fontSize: 16),
+                  CustomText(
+                    text: "Nama Lengkap: ${controller.nama_lengkap}",
+                    fontSize: 16,
+                    color: Colors.black,
                   ),
 
                   const SizedBox(height: 14),
 
-                  Text(
-                    "Email: ${controller.email}",
-                    style: const TextStyle(fontSize: 16),
+                  CustomText(
+                    text: "Email: ${controller.email}",
+                    fontSize: 16,
+                    color: Colors.black,
                   ),
 
                   const SizedBox(height: 14),
 
-                  Text(
-                    "Jenis Kelamin: ${controller.gender}",
-                    style: const TextStyle(fontSize: 16),
+                  CustomText(
+                    text: "Jenis Kelamin: ${controller.gender}",
+                    fontSize: 16,
+                    color: Colors.black,
                   ),
                 ],
               ),
@@ -127,12 +125,10 @@ class ConfirmRegistrationPage extends StatelessWidget {
             const SizedBox(height: 15),
 
             const Center(
-              child: Text(
-                "Pastikan semua data sudah benar.",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.grey,
-                ),
+              child: CustomText(
+                text: "Pastikan semua data sudah benar.",
+                fontSize: 12,
+                color: Colors.grey,
               ),
             ),
           ],

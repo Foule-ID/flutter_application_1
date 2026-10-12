@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-     title: "Belajar Flutter",
-     initialRoute: Routes.registration,
-     getPages: Routes.myPages,
+      title: "Belajar Flutter",
+      initialRoute: Routes.list_makanan,
+      getPages: Routes.myPages,
     );
   }
 }
