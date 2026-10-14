@@ -4,14 +4,16 @@ import 'package:flutter_application_1/models/makanan_model.dart';
 import 'package:flutter_application_1/component/custume_button.dart';
 import 'package:flutter_application_1/component/custume_textview.dart';
 import 'package:flutter_application_1/component/custume_detail_item.dart';
+import 'package:flutter_application_1/controllers/detail_makanan_controller.dart';
 
 class DetailMakananPage extends StatelessWidget {
-  final MakananModel makanan;
 
-  const DetailMakananPage({super.key, required this.makanan});
+  const DetailMakananPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(DetailMakananController());
+
     return Scaffold(
       backgroundColor: const Color(0xFFF5F7FB),
 
@@ -50,7 +52,7 @@ class DetailMakananPage extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
-                  makanan.gambar,
+                  controller.makanan.gambar,
                   width: double.infinity,
                   height: 220,
                   fit: BoxFit.cover,
@@ -73,20 +75,20 @@ class DetailMakananPage extends StatelessWidget {
 
               CustumeDetailItem(
                 label: "Nama Makanan",
-                value: makanan.namaMakanan,
+                value: controller.makanan.namaMakanan,
                 valueFontSize: 22,
               ),
 
               CustumeDetailItem(
                 label: "Harga",
-                value: "Rp ${makanan.harga}",
+                value: "Rp ${controller.makanan.harga}",
                 valueColor: Colors.blue,
                 valueFontSize: 20,
               ),
 
-              CustumeDetailItem(label: "Review Makanan", value: makanan.review),
+              CustumeDetailItem(label: "Review Makanan", value: controller.makanan.review),
 
-              CustumeDetailItem(label: "Detail Makanan", value: makanan.detail),
+              CustumeDetailItem(label: "Detail Makanan", value: controller.makanan.detail),
 
               const SizedBox(height: 10),
 
