@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import 'package:flutter_application_1/controllers/list_makanan_controller.dart';
 import 'package:flutter_application_1/component/custume_makanan_card.dart';
-import 'package:flutter_application_1/pages/detail_makanan_page.dart';
 import 'package:flutter_application_1/routes.dart';
 
 class ListMakananPage extends StatelessWidget {
@@ -41,11 +40,11 @@ class ListMakananPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 final makanan = controller.dataMakanan[index];
 
-                return CustumeMakananCard(
+              return CustumeMakananCard(
                   makanan: makanan,
 
                   onTap: () {
-                    Get.toNamed(Routes.detail_makanan, arguments: makanan);
+                    Get.toNamed(Routes.detail_makanan, arguments: {'makanan': makanan});
                   },
                 );
               },

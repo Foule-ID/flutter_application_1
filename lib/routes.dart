@@ -20,6 +20,6 @@ class Routes {
       page: () => const ConfirmRegistrationPage(),
     ),
     GetPage(name: list_makanan, page: () => ListMakananPage()),
-    GetPag(name: detail_makanan, page: () => DetailMakananPage()),
+    GetPage(name: detail_makanan, page: () => DetailMakananPage()),
   ];
 }

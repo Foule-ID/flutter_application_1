@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_application_1/models/makanan_model.dart';
 import 'package:flutter_application_1/component/custume_button.dart';
 import 'package:flutter_application_1/component/custume_textview.dart';
 import 'package:flutter_application_1/component/custume_detail_item.dart';
