@@ -31,5 +31,26 @@ class ListMakananController extends GetxController {
     detail: "Soto ayam dengan kuah rempah dan potongan daging ayam.",
     gambar: "lib/assets/images/soto_ayam.jpeg",
   ),
+  MakananModel(
+    namaMakanan: "Nasi Goreng",
+    harga: "12.000",
+    review: "4.8/5",
+    detail: "Nasi goreng dengan bumbu khas dan tambahan telur.",
+    gambar: "lib/assets/images/nasi_goreng.jpeg",
+  ),
+  MakananModel(
+    namaMakanan: "Bakso",
+    harga: "10.000",
+    review: "4.7/5",
+    detail: "Bakso sapi dengan kuah kaldu gurih dan mie.",
+    gambar: "lib/assets/images/bakso.jpeg",
+  ),
+  MakananModel(
+    namaMakanan: "Gado-gado",
+    harga: "11.000",
+    review: "4.6/5",
+    detail: "Salad sayuran dengan bumbu kacang khas Indonesia.",
+    gambar: "lib/assets/images/gado_gado.jpeg",
+  ),
 ];
 }
