@@ -13,7 +13,7 @@ class ProfileMenuTile extends StatelessWidget {
     required this.icon,
     required this.iconColor,
     required this.title,
-    this.textColor = Colors.black, // Default warna hitam kalau tidak diisi
+    this.textColor = Colors.black, 
     required this.onTap,
   });
 

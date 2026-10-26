@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/custume_textview.dart';
-import 'package:flutter_application_1/component/profile_menu_tile.dart'; // Import component yang baru dibikin
+import 'package:flutter_application_1/component/profile_menu_tile.dart'; 
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
