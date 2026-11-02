@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "Belajar Flutter",
-      initialRoute: Routes.main_menu,
+      initialRoute: Routes.Login,
       getPages: Routes.myPages,
     );
   }
