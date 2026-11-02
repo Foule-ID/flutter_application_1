@@ -30,7 +30,7 @@ class LoginController extends GetxController {
           isLoading.value = false;
           if(response.statusCode == 200){
             final data = jsonDecode(response.body);
-            if(data['status'] == "success"){
+            if(data['status'] == true){
               Get.snackbar("Success", data['message']);
               Get.offNamed(Routes.main_menu);
             }else{
