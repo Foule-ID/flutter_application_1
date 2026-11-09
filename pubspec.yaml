@@ -60,7 +60,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - lib/assets/images/
+    - assets/images/
+    - assets/images/icon_instagram.jpeg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
