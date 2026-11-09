@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/custume_textview.dart';
-import 'package:flutter_application_1/component/profile_menu_tile.dart'; 
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -8,7 +7,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F7FB),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const CustomText(
           text: "Profile",
@@ -16,7 +15,6 @@ class ProfilePage extends StatelessWidget {
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
-        centerTitle: true,
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -25,65 +23,104 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 30),
-            
-            const CircleAvatar(
-              radius: 55,
-              backgroundColor: Colors.blue,
-              child: Icon(Icons.person, size: 60, color: Colors.white),
-            ),
-            const SizedBox(height: 16),
-            
-            const CustomText(
-              text: "Arhaqi FadilGaffari", 
-              fontSize: 22, 
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-            const SizedBox(height: 4),
-            
-            const CustomText(
-              text: "Siswa SMK Raden Umar Said",
-              fontSize: 14,
-              color: Colors.grey,
+
+            Stack(
+              children: [
+                const CircleAvatar(
+                  radius: 75,
+                  backgroundColor: Color(0xFFECE5DD),
+                  child: Icon(Icons.person, size: 100, color: Colors.white),
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFF128C7E),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.camera_alt,
+                      color: Colors.white,
+                      size: 24,
+                    ),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 30),
 
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
+            ListTile(
+              leading: const Padding(
+                padding: EdgeInsets.only(top: 8.0),
+                child: Icon(Icons.person, color: Colors.grey, size: 28),
+              ),
+              title: const CustomText(
+                text: "Name",
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ProfileMenuTile(
-                    icon: Icons.person_outline,
-                    iconColor: Colors.blue,
-                    title: "Edit Profile",
-                    onTap: () {},
+                  const SizedBox(height: 4),
+                  const CustomText(
+                    text: "Arhaqi FadilGaffari",
+                    fontSize: 18,
+                    color: Colors.black,
                   ),
-                  const Divider(), 
-                  
-                  ProfileMenuTile(
-                    icon: Icons.settings_outlined,
-                    iconColor: Colors.blue,
-                    title: "Pengaturan",
-                    onTap: () {},
-                  ),
-                  const Divider(),
-                  
-                  ProfileMenuTile(
-                    icon: Icons.help_outline,
-                    iconColor: Colors.blue,
-                    title: "Bantuan & Laporan",
-                    onTap: () {},
-                  ),
-                  const Divider(),
-                  
-                  ProfileMenuTile(
-                    icon: Icons.logout,
-                    iconColor: Colors.red,
-                    title: "Keluar",
-                    textColor: Colors.red,
-                    onTap: () {},
+                  const SizedBox(height: 8),
+                  const CustomText(
+                    text: "This is not your username or pin. This name will be visible to your WhatsApp contacts.",
+                    fontSize: 13,
+                    color: Colors.grey,
                   ),
                 ],
+              ),
+              trailing: const Icon(Icons.edit, color: Color(0xFF128C7E)),
+            ),
+
+            const Padding(padding: EdgeInsets.only(left: 70), child: Divider()),
+
+            ListTile(
+              leading: const Icon(
+                Icons.info_outline,
+                color: Colors.grey,
+                size: 28,
+              ),
+              title: const CustomText(
+                text: "About",
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+              subtitle: const Padding(
+                padding: EdgeInsets.only(top: 4.0),
+                child: CustomText(
+                  text: "Siswa SMK Raden Umar Said",
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
+              ),
+              trailing: const Icon(Icons.edit, color: Color(0xFF128C7E)),
+            ),
+
+            const Padding(padding: EdgeInsets.only(left: 70), child: Divider()),
+
+            ListTile(
+              leading: const Icon(Icons.phone, color: Colors.grey, size: 28),
+              title: const CustomText(
+                text: "Phone",
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+              subtitle: const Padding(
+                padding: EdgeInsets.only(top: 4.0),
+                child: CustomText(
+                  text: "+62 812-3456-7890",
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
               ),
             ),
           ],
