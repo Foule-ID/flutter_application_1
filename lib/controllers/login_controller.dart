@@ -1,15 +1,18 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:flutter_application_1/models/login_model.dart';
 import 'package:flutter_application_1/routes.dart';
 
 class LoginController extends GetxController {
 
     TextEditingController txtUsername = TextEditingController();
     TextEditingController txtPassword = TextEditingController();
-
+    
+    var loginModel = Rxn<LoginResponse>();
     var isLoading = false.obs;
+
+
 
     void login() async{
       if(txtUsername.text.toString().isEmpty || txtPassword.text.toString().isEmpty){
@@ -29,18 +32,25 @@ class LoginController extends GetxController {
 
           isLoading.value = false;
           if(response.statusCode == 200){
-            final data = jsonDecode(response.body);
-            if(data['status'] == true){
-              Get.snackbar("Success", data['message']);
+            // final data = jsonDecode(response.body);
+            loginModel.value = loginResponseFromJson(response.body);
+            // if(data['status'] == true){
+            //   Get.snackbar("Success", data['message']);
+
+            if(loginModel.value?.status == true){
+
+              Get.snackbar("Success", loginModel.value!.message);
+
               Get.offNamed(Routes.main_menu);
             }else{
-              Get.snackbar("Failed", data['message']);
+              Get.snackbar("Failed", loginModel.value?.message ?? "Login failed");
             }
           }else{
             Get.snackbar("failed", "cek internet connection");
           }
 
         }catch (e) {
+          isLoading.value = false;
           Get.snackbar("Error", e.toString());
         }
 
