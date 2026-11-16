@@ -41,14 +41,13 @@ class LoginController extends GetxController {
 
               Get.snackbar("Success", loginModel.value!.message);
 
-              Get.offNamed(Routes.main_menu);
+              Get.offNamed(Routes.User);
             }else{
               Get.snackbar("Failed", loginModel.value?.message ?? "Login failed");
             }
           }else{
             Get.snackbar("failed", "cek internet connection");
           }
-
         }catch (e) {
           isLoading.value = false;
           Get.snackbar("Error", e.toString());

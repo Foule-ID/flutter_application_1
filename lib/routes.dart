@@ -5,6 +5,7 @@ import 'package:flutter_application_1/pages/confirm_registration_page.dart';
 import 'package:flutter_application_1/pages/list_makanan_page.dart';
 import 'package:flutter_application_1/pages/detail_makanan_page.dart';
 import 'package:flutter_application_1/pages/main_menu.dart';
+import 'package:flutter_application_1/pages/user_page.dart';
 
 
 class Routes {
@@ -14,6 +15,7 @@ class Routes {
   static const String detail_makanan = '/detail_makanan';
   static const String main_menu = '/main_menu';
   static const String Login = '/Login';
+  static const String User = '/user';
 
   static final myPages = [
     GetPage(
@@ -24,9 +26,25 @@ class Routes {
       name: confirmRegistration,
       page: () => const ConfirmRegistrationPage(),
     ),
-    GetPage(name: list_makanan, page: () => ListMakananPage()),
-    GetPage(name: detail_makanan, page: () => DetailMakananPage()),
-    GetPage(name: main_menu, page: () =>  MainMenu()),
-    GetPage(name: Login, page: () => LoginPage()),
+    GetPage(
+      name: list_makanan, 
+      page: () => ListMakananPage()
+      ),
+    GetPage(
+      name: detail_makanan, 
+      page: () => DetailMakananPage()
+      ),
+    GetPage(
+      name: main_menu, 
+      page: () =>  MainMenu()
+      ),
+    GetPage(
+      name: Login, 
+      page: () => LoginPage()
+      ),
+    GetPage(
+      name: User, 
+      page: () => ListUserPage()
+      ),
   ];
 }
