@@ -4,6 +4,7 @@ import 'package:flutter_application_1/component/custume_button.dart';
 import 'package:flutter_application_1/component/custume_textview.dart';
 import 'package:flutter_application_1/component/custume_detail_item.dart';
 import 'package:flutter_application_1/controllers/detail_makanan_controller.dart';
+import 'package:flutter_application_1/component/custume_textfield.dart';
 
 class DetailMakananPage extends StatelessWidget {
 
@@ -89,7 +90,68 @@ class DetailMakananPage extends StatelessWidget {
 
               CustumeDetailItem(label: "Detail Makanan", value: controller.makanan.detail),
 
-              const SizedBox(height: 10),
+              const Divider(height: 30),
+
+              CustomTextField(
+                myHint: "Masukkan Jumlah Makanan (contoh: 2)",
+                txtcontroller: controller.jumlahController,
+              ),
+              const SizedBox(height: 16), 
+
+              CustumeButton(
+                text: "bayar",
+                width: double.infinity,
+                height: 52,
+                borderRadius: 12,
+                backgroundColor: Colors.green,
+                textColor: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                onPressed: () {
+                  controller.hitungTransaksi();
+                },
+              ),
+
+              Obx(() => Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const CustomText(
+                      text: "Rincian Pembayaran",
+                      fontSize: 16,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    const SizedBox(height: 8),
+                    CustomText(
+                      text: "Subtotal : Rp ${controller.subtotal.value.toStringAsFixed(0)}",
+                      fontSize: 14,
+                      color: Colors.black87,
+                    ),
+                    const SizedBox(height: 4),
+                    CustomText(
+                      text: "PPN (5%) : Rp ${controller.ppn.value.toStringAsFixed(0)}",
+                      fontSize: 14,
+                      color: Colors.black87,
+                    ),
+                    const Divider(),
+                    CustomText(
+                      text: "Total Bayar : Rp ${controller.totalBayar.value.toStringAsFixed(0)}",
+                      fontSize: 18,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ],
+                ),
+              )),
+
+              const SizedBox(height: 16),
 
               CustumeButton(
                 text: "Kembali ke List",
