@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/menu/home_page.dart';
-import 'package:flutter_application_1/menu/history_page.dart';
+import 'package:flutter_application_1/menu/feat_page.dart';
 import 'package:flutter_application_1/menu/profile_page.dart';
 
 
@@ -14,7 +14,7 @@ class MainMenuController extends GetxController {
 
   List<Widget> listPage = [
     HomePage(),
-    HistoryPage(),
+    FeatPage(),
     ProfilePage(),
   ];
 }

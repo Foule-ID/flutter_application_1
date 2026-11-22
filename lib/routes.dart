@@ -6,6 +6,7 @@ import 'package:flutter_application_1/pages/list_makanan_page.dart';
 import 'package:flutter_application_1/pages/detail_makanan_page.dart';
 import 'package:flutter_application_1/pages/main_menu.dart';
 import 'package:flutter_application_1/pages/user_page.dart';
+import 'package:flutter_application_1/menu/feat_page.dart';
 
 
 class Routes {
@@ -16,6 +17,7 @@ class Routes {
   static const String main_menu = '/main_menu';
   static const String Login = '/Login';
   static const String User = '/user';
+  static const String Feat = '/feat';
 
   static final myPages = [
     GetPage(
@@ -45,6 +47,10 @@ class Routes {
     GetPage(
       name: User, 
       page: () => ListUserPage()
+      ),
+    GetPage(
+      name: Feat, 
+      page: () => FeatPage()
       ),
   ];
 }
